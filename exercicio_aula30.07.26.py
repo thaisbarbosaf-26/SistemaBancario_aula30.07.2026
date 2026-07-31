@@ -3,12 +3,12 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+import pandas as pd  #Biblioteca p/ análise e visualizaão de dados, integra bibliotecas de visualização, entre outros.
 
 saldo = 100
 extrato = []
 historico_saldo = [saldo]  # guarda o saldo após cada movimentação, para plotar depois
-ARQUIVO_CSV = "extrato_movimentacao.csv"
+ARQUIVO_CSV = "extrato_movimentacao.csv" #Neste arquivo consta o registro de todas as movimentações realizadas pelo usuário.
 
 
 def salvar_no_csv(tipo, valor):
@@ -19,7 +19,7 @@ def salvar_no_csv(tipo, valor):
         )
 
 
-def exibir_banco():
+def exibir_banco():  #Função inserida p/ exibir ao usuário as opções do caixa eletrônico.
     print("\n===== CAIXA ELETRONICO =====")
     print("1- Consultar Saldo")
     print("2- Depositar Dinheiro")
@@ -30,11 +30,11 @@ def exibir_banco():
     print("7- Sair")
 
 
-def consultar_saldo():
+def consultar_saldo():  #Função inserida p/ consultar o saldo do usuário.
     print(f"\nSeu saldo atual é: R$ {saldo:.2f}")
 
 
-def depositar_dinheiro():
+def depositar_dinheiro():  #Função inserida p/ informar o valor a ser depositado.
     global saldo
     valor = float(input("\nDigite o valor a ser depositado R$ "))
     if valor > 0:
@@ -47,7 +47,7 @@ def depositar_dinheiro():
         print("\nValor inválido.")
 
 
-def sacar_dinheiro():
+def sacar_dinheiro():  #Função inserida p/ informar o valor a ser sacado.
     global saldo
     valor = float(input("\nDigite o valor a ser sacado R$ "))
     if valor > 0 and valor <= saldo:
